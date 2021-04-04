@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $("form").submit(function(){
+                alert("data terkirim");
+            })
+
+            // value tidak hilang setelah submit
+            $("form").submit(function(){
+                $("#nama").focus();
+                return false;
+            });
+
+            $("#klik").click(function(){
+                alert('Nickzad');
+            });
+
+            $("#dblKlik").dblclick(function(){
+                alert('Nickzad Pratama');
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <form action="">
+        <input type="text" name="nama" id="nama">
+        <button type="submit">Klik</button>
+    </form>
+    <br>
+    <button id="klik">Klik</button>
+    <button id="dblKlik">Dabel Klik</button>
+
+</body>
+</html>

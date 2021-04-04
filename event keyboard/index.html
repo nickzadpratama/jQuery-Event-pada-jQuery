@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+        $("form").submit(function(e){
+                e.preventDefault();
+            })
+
+            $("#nama_daerah").keydown(function(e){
+                $("p").html(e.type + ": " + e.which);
+                if (e.which == 13) {
+                    $("#umur").focus();
+                }
+            });
+            $("input").keydown(function(){
+                $(this).css("background","blue")
+                $(this).css("color","white")
+            });
+
+            $("input").keyup(function(){
+                $(this).css("background","red")
+                $(this).css("color","white")
+            });
+            
+            $("input").keypress(function(){
+                $(this).css("background","yellow")
+                $(this).css("color","white")
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <form action="">
+        <input type="text" name="nama_daerah" id="nama_daerah">
+        <input type="text" name="umur" id="umur">
+        <p>...</p>
+        <button type="submit">Klik</button>
+    </form>
+    
+</body>
+</html>
